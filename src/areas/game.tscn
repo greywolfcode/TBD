@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drrqd1kg5x8c3"]
+
+[ext_resource type="Script" uid="uid://by04h3qqcpb1m" path="res://camaras/play_camara.gd" id="1_yhr22"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j8jgc"]
+size = Vector3(19.371582, 0.2607422, 15.620117)
+
+[node name="game" type="Node3D" unique_id=988747938]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=703318921]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 1)
+script = ExtResource("1_yhr22")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2027275070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65607977, -0.8465891, -0.4599098)
+mesh = SubResource("BoxMesh_j8jgc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1450073745]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.957424, 0)
