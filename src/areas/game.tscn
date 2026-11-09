@@ -11,7 +11,7 @@ size = Vector3(19.371582, 0.2607422, 15.620117)
 script = ExtResource("1_yhr22")
 
 [node name="Camera3D" type="Camera3D" parent="camara" unique_id=703318921]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -1.4496167, 3, 4)
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, -1.4496167, 3, 4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2027275070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65607977, -0.8465891, -2.45991)
