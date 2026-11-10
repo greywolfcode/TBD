@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by04h3qqcpb1m" path="res://camaras/play_camara.gd" id="1_yhr22"]
 [ext_resource type="PackedScene" uid="uid://n2uqe6w3q43g" path="res://areas/background.tscn" id="2_15ku6"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_22v44"]
-height = 0.15332031
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oc0p"]
+[ext_resource type="PackedScene" uid="uid://clarjomh430v6" path="res://world/table/table.tscn" id="3_bllmp"]
 
 [node name="game" type="Node3D" unique_id=988747938]
 
@@ -14,11 +10,9 @@ height = 0.15332031
 script = ExtResource("1_yhr22")
 
 [node name="Camera3D" type="Camera3D" parent="camara" unique_id=703318921]
-transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 0.411, 0.844)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2027275070]
-mesh = SubResource("CylinderMesh_22v44")
-surface_material_override/0 = SubResource("StandardMaterial3D_8oc0p")
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.411, 2.8439999)
 
 [node name="background" parent="." unique_id=345914287 instance=ExtResource("2_15ku6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="table" parent="." unique_id=983783951 instance=ExtResource("3_bllmp")]
