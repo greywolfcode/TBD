@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dq6trtud51l2m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qneup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sti4o"]
+
+[node name="mountain" type="Node3D" unique_id=368907522]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=814102540]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_qneup")
+surface_material_override/0 = SubResource("StandardMaterial3D_sti4o")
