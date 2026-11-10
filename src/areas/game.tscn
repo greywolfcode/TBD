@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://by04h3qqcpb1m" path="res://camaras/play_camara.gd" id="1_yhr22"]
 [ext_resource type="PackedScene" uid="uid://n2uqe6w3q43g" path="res://areas/background.tscn" id="2_15ku6"]
 [ext_resource type="PackedScene" uid="uid://clarjomh430v6" path="res://world/table/table.tscn" id="3_bllmp"]
+[ext_resource type="Script" uid="uid://dnj6034oivbs8" path="res://world/table/table.gd" id="4_3psbg"]
+[ext_resource type="PackedScene" uid="uid://dur34mf6no77" path="res://tiles/preview/tile_preview.tscn" id="5_o4u2g"]
 
 [node name="game" type="Node3D" unique_id=988747938]
 
@@ -16,3 +18,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.939
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="table" parent="." unique_id=983783951 instance=ExtResource("3_bllmp")]
+script = ExtResource("4_3psbg")
+
+[node name="tile_preview" parent="table" unique_id=1668961949 instance=ExtResource("5_o4u2g")]
