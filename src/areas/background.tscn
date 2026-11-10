@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://n2uqe6w3q43g"]
+
+[node name="background" type="Node3D" unique_id=345914287]
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=121214648]
+transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="ceiling" type="CSGBox3D" parent="." unique_id=1691805878]
+transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 10, 0)
+
+[node name="wall_1" type="CSGBox3D" parent="." unique_id=893493687]
+transform = Transform3D(25, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 5, 12.5)
+
+[node name="wall_2" type="CSGBox3D" parent="." unique_id=1609583633]
+transform = Transform3D(25, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 5, -12.5)
+
+[node name="wall_3" type="CSGBox3D" parent="." unique_id=1007911963]
+transform = Transform3D(0.1, 0, 0, 0, 10, 0, 0, 0, 25, 12.5, 5, 0)
+
+[node name="wall_4" type="CSGBox3D" parent="." unique_id=605967572]
+transform = Transform3D(0.1, 0, 0, 0, 10, 0, 0, 0, 25, -12.5, 5, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=431628048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+light_energy = 5.0
+omni_range = 25.0
+omni_attenuation = 0.1
