@@ -2,6 +2,9 @@ extends Node3D
 
 const RAY_LENGTH: int = 50
 @onready var preview: Node3D = $tile_preview
+@onready var tile_storage: Node = $"../tiles"
+
+const MEADOW_TILE: PackedScene = preload("res://tiles/meadow/meadow.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,4 +36,12 @@ func _physics_process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("left_click"):
+		if preview.visible: #means that the mouse is over a grid location
+			Globals.tiles[Vector2(preview.position.x, preview.position.y)] = Globals.TileType.MEADOW
+			
+			var new_tile = MEADOW_TILE.instantiate()
+			new_tile.position.x = preview.position.x
+			new_tile.position.y = 0.015
+			new_tile.position.z = preview.position.z
+			tile_storage.add_child(new_tile)
