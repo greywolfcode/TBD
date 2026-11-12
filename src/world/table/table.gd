@@ -6,7 +6,7 @@ const RAY_LENGTH: int = 50
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	preview.hide()
-	preview.position.y = 0.5
+	preview.position.y = 0.1
 
 func _physics_process(delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state
@@ -21,8 +21,8 @@ func _physics_process(delta: float) -> void:
 	var result = space_state.intersect_ray(query)
 	
 	if result:
-		var grid_x = floor(result.position.x)
-		var grid_z = floor(result.position.z)
+		var grid_x = floor(result.position.x / 0.05) * 0.05
+		var grid_z = floor(result.position.z / 0.05) * 0.05
 		
 		preview.position.x = grid_x
 		preview.position.z = grid_z

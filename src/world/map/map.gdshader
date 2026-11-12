@@ -1,7 +1,7 @@
 shader_type spatial;
 
 uniform vec3 grid_colour : source_color = vec3(0.0);
-uniform float cell_size = 1.0;
+uniform float cell_size = 0.05;
 uniform float line_thickness : hint_range(0.0, 1.0) = 0.01;
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 

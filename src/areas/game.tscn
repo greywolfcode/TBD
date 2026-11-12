@@ -14,7 +14,7 @@
 script = ExtResource("1_yhr22")
 
 [node name="zoom" type="SpringArm3D" parent="camara" unique_id=72786353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07717568, 1.0569986, 2.3120706)
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0.61351115, 1.0079999)
 shape = SubResource("BoxShape3D_k7u66")
 margin = 0.5
 

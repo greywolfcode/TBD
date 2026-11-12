@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bl3qvbna6i1px"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_j8jgc"]
-size = Vector3(1, 0.2, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_3teja"]
+size = Vector3(0.05, 0.01, 0.05)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvwby"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf1r5"]
 
 [node name="meadow" type="Node3D" unique_id=1172833996]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=337236158]
-mesh = SubResource("BoxMesh_j8jgc")
-surface_material_override/0 = SubResource("StandardMaterial3D_cvwby")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=463598885]
+mesh = SubResource("BoxMesh_3teja")
+surface_material_override/0 = SubResource("StandardMaterial3D_qf1r5")
