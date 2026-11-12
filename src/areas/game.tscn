@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dur34mf6no77" path="res://tiles/preview/tile_preview.tscn" id="5_o4u2g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7u66"]
+margin = 0.1
 
 [node name="game" type="Node3D" unique_id=988747938]
 
