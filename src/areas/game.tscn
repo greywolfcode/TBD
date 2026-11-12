@@ -6,13 +6,19 @@
 [ext_resource type="Script" uid="uid://dnj6034oivbs8" path="res://world/table/table.gd" id="4_3psbg"]
 [ext_resource type="PackedScene" uid="uid://dur34mf6no77" path="res://tiles/preview/tile_preview.tscn" id="5_o4u2g"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7u66"]
+
 [node name="game" type="Node3D" unique_id=988747938]
 
 [node name="camara" type="Node3D" parent="." unique_id=1887004443]
 script = ExtResource("1_yhr22")
 
-[node name="Camera3D" type="Camera3D" parent="camara" unique_id=703318921]
-transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.411, 2.8439999)
+[node name="zoom" type="SpringArm3D" parent="camara" unique_id=72786353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07717568, 1.0569986, 2.3120706)
+shape = SubResource("BoxShape3D_k7u66")
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="camara/zoom" unique_id=703318921]
 
 [node name="background" parent="." unique_id=345914287 instance=ExtResource("2_15ku6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)

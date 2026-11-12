@@ -18,6 +18,10 @@ shader_parameter/line_thickness = 0.01
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvwby"]
 size = Vector3(5, 0, 5)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_03nct"]
+height = 0.1
+radius = 2.4404297
+
 [node name="table" type="Node3D" unique_id=983783951]
 
 [node name="structure" type="Node3D" parent="." unique_id=347108261]
@@ -42,3 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
 shape = SubResource("BoxShape3D_cvwby")
 
 [node name="tiles" type="Node3D" parent="." unique_id=221248569]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=80603684]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=612338212]
+shape = SubResource("CylinderShape3D_03nct")
