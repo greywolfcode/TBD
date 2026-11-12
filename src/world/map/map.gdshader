@@ -11,7 +11,8 @@ void fragment() {
 	vec3 world_pos = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	
 	//shift grid to be centred at (0,0)
-	vec2 grid_pos = mod(world_pos.xz + cell_size * 0.5, cell_size) / cell_size - 0.5;
+	vec2 grid_pos = mod(world_pos.xz + cell_size, cell_size) / cell_size - 0.5;
+	
 	grid_pos = abs(grid_pos) * 2.0;
 	
 	//only apply colour when on one of the axis

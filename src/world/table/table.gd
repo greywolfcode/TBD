@@ -21,8 +21,8 @@ func _physics_process(delta: float) -> void:
 	var result = space_state.intersect_ray(query)
 	
 	if result:
-		var grid_x = floor(result.position.x) + 0.5
-		var grid_z = floor(result.position.z) + 0.5
+		var grid_x = floor(result.position.x)
+		var grid_z = floor(result.position.z)
 		
 		preview.position.x = grid_x
 		preview.position.z = grid_z
