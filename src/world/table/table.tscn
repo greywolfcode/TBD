@@ -1,45 +1,34 @@
 [gd_scene format=3 uid="uid://clarjomh430v6"]
 
-[ext_resource type="Shader" uid="uid://bkncsvascm04i" path="res://world/table/table.gdshader" id="1_k7u66"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_j8jgc"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_03nct"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_j8jgc"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4u2g"]
-render_priority = 0
-shader = ExtResource("1_k7u66")
-shader_parameter/grid_colour = Color(0, 0, 0, 1)
-shader_parameter/cell_size = 1.0
-shader_parameter/line_thickness = 0.01
+[ext_resource type="PackedScene" uid="uid://hrehaq6qjap5" path="res://world/table/Table.gltf" id="1_k7u66"]
+[ext_resource type="PackedScene" uid="uid://c2iky006p65tf" path="res://world/map/Map-Center.gltf" id="2_3qiti"]
+[ext_resource type="PackedScene" uid="uid://bq6sxuig85rnw" path="res://world/map/Map-Edge.gltf" id="3_3g2qo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvwby"]
-size = Vector3(5, 0, 5)
+size = Vector3(2, 0, 2)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_03nct"]
-height = 0.1
-radius = 2.4404297
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qiti"]
+size = Vector3(2.3, 1, 2.1)
 
 [node name="table" type="Node3D" unique_id=983783951]
 
 [node name="structure" type="Node3D" parent="." unique_id=347108261]
 
-[node name="top" type="MeshInstance3D" parent="structure" unique_id=434627232]
-transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("CylinderMesh_j8jgc")
+[node name="Table" parent="structure" unique_id=989569162 instance=ExtResource("1_k7u66")]
 
-[node name="base" type="MeshInstance3D" parent="structure" unique_id=952898045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0792018, 0)
-mesh = SubResource("CylinderMesh_03nct")
+[node name="Map" type="Node3D" parent="structure" unique_id=2047883649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 
-[node name="map" type="MeshInstance3D" parent="structure" unique_id=494193387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-mesh = SubResource("PlaneMesh_j8jgc")
-surface_material_override/0 = SubResource("ShaderMaterial_o4u2g")
+[node name="Map-Center" parent="structure/Map" unique_id=1891310043 instance=ExtResource("2_3qiti")]
+
+[node name="Map-Edge1" parent="structure/Map" unique_id=1333821725 instance=ExtResource("3_3g2qo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6096, 0, 0)
+
+[node name="Map-Edge2" parent="structure/Map" unique_id=1614550326 instance=ExtResource("3_3g2qo")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.60960007, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=768709628]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1843869291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
@@ -50,4 +39,5 @@ shape = SubResource("BoxShape3D_cvwby")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=80603684]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=612338212]
-shape = SubResource("CylinderShape3D_03nct")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_3qiti")
