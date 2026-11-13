@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b3jg1w03wxhfy"]
+
+[ext_resource type="Shader" uid="uid://civly3lrirnps" path="res://tiles/meadow/meadow.gdshader" id="1_m2dqq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m2dqq")
+shader_parameter/colour_one = Color(0.18039, 0.43529, 0.25098, 1)
+shader_parameter/colour_two = Color(0.03921, 0.09803, 0.0549, 1)
+shader_parameter/noise_scale = 40.0
