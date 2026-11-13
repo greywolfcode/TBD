@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bunis5xb1dtn"]
+
+[ext_resource type="Texture2D" uid="uid://bnm5h0xjbbuyw" path="res://cards/card_texture.webp" id="1_ivai2"]
+[ext_resource type="Script" uid="uid://chwdymoqggiut" path="res://cards/card.gd" id="1_nwofj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8jgc"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="card" type="Control" unique_id=2043327123]
+layout_mode = 3
+anchor_right = 0.21400002
+anchor_bottom = 0.523
+offset_right = -0.52801514
+offset_bottom = 0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwofj")
+
+[node name="card_button" type="TextureButton" parent="." unique_id=808571796]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 108.0
+texture_normal = ExtResource("1_ivai2")
+
+[node name="name" type="Label" parent="card_button" unique_id=1887567803]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 17.0
+grow_horizontal = 2
+text = "Card Name"
+label_settings = SubResource("LabelSettings_j8jgc")
+horizontal_alignment = 1
+
+[connection signal="button_down" from="card_button" to="." method="_on_card_button_button_down"]
+[connection signal="mouse_entered" from="card_button" to="." method="_on_card_button_mouse_entered"]
+[connection signal="mouse_exited" from="card_button" to="." method="_on_card_button_mouse_exited"]
