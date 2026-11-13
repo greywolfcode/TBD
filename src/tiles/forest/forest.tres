@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dwtvr8gxijphm"]
+
+[ext_resource type="Shader" uid="uid://dypuejjc73dc8" path="res://tiles/forest/forest.gdshader" id="1_ykdsx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ykdsx")
+shader_parameter/colour_one = Color(0.18039, 0.43529, 0.25098, 1)
+shader_parameter/colour_two = Color(0.03921, 0.09803, 0.0549, 1)
+shader_parameter/noise_scale = 20.0
