@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cauuwqgi2a75o"]
+
+[ext_resource type="Shader" uid="uid://ch045n6uruc0t" path="res://world/map/paper.gdshader" id="1_74ne1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_74ne1")
+shader_parameter/base_colour = Color(0.85098, 0.76862, 0.52549, 1)
+shader_parameter/spot_colour = Color(0.6, 0.49411, 0.18823, 1)
