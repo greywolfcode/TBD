@@ -3,34 +3,32 @@
 //creates random vector based on coords
 vec3 create_vector_3D(vec3 vec) {
 	//using length to get single number; still is somewhat random due to hash
-    float coords_hash = length(hash_3D(vec));
+    vec2 coords_hash = hash_3D(vec).xy;
 	
 	//generate random values
-	float theta = coords_hash * 2.0 * PI;
+	float theta = coords_hash.x * 2.0 * PI;
 	float x = cos(theta);
 	float y = sin(theta);
-	float z = fract(coords_hash * 43758.5453123) * 2.0 - 1.0;
+	float z = fract(coords_hash.y * 43758.5453123) * 2.0 - 1.0;
 	float r = sqrt(max(0.0, 1.0 - z * z));
 	
     //create and return vector based on hashed coords
     vec3 vector = vec3(x * r, y * r, z);
-    return normalize(vector);
+    return vector;
 }
 
 vec2 create_vector_2D(vec2 vec) {
 	//using length to get single number; still is somewhat random due to hash
-    float coords_hash = length(hash_2D(vec));
+    float coords_hash = hash_2D(vec).x;
 	
 	//generate random values
 	float theta = coords_hash * 2.0 * PI;
 	float x = cos(theta);
 	float y = sin(theta);
-	float z = fract(coords_hash * 43758.5453123) * 2.0 - 1.0;
-	float r = sqrt(max(0.0, 1.0 - z * z));
 	
     //create and return vector based on hashed coords
-    vec2 vector = vec2(x * r, y * r);
-    return normalize(vector);
+    vec2 vector = vec2(x, y);
+    return vector;
 }
 
 float quintic_smoothstep(float x) {
