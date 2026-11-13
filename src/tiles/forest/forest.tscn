@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://dvrh0kbc0ewih"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_fhd20"]
-size = Vector3(0.05, 0.01, 0.05)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_six0h"]
+[ext_resource type="PackedScene" uid="uid://lvbl0hbhrgmn" path="res://tiles/forest/Forest.gltf" id="1_six0h"]
 
 [node name="forest" type="Node3D" unique_id=1005466073]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=826468225]
-mesh = SubResource("BoxMesh_fhd20")
-surface_material_override/0 = SubResource("StandardMaterial3D_six0h")
+[node name="Forest2" parent="." unique_id=1321333922 instance=ExtResource("1_six0h")]

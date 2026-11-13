@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://c40ogu33koch7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_k4lu6"]
-size = Vector3(0.05, 0.01, 0.05)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsa5e"]
+[ext_resource type="PackedScene" uid="uid://b7ugm6hbm6ewp" path="res://tiles/water/Water.gltf" id="1_fsa5e"]
 
 [node name="water" type="Node3D" unique_id=1008556305]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=532933465]
-mesh = SubResource("BoxMesh_k4lu6")
-surface_material_override/0 = SubResource("StandardMaterial3D_fsa5e")
+[node name="Water2" parent="." unique_id=1346661223 instance=ExtResource("1_fsa5e")]

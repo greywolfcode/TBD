@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://dq6trtud51l2m"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_qneup"]
-size = Vector3(0.05, 0.01, 0.05)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sti4o"]
+[ext_resource type="PackedScene" uid="uid://b3i6j0w1ce3ti" path="res://tiles/mountain/Moutain.gltf" id="1_sti4o"]
 
 [node name="mountain" type="Node3D" unique_id=368907522]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=814102540]
-mesh = SubResource("BoxMesh_qneup")
-surface_material_override/0 = SubResource("StandardMaterial3D_sti4o")
+[node name="Moutain" parent="." unique_id=1006738955 instance=ExtResource("1_sti4o")]
