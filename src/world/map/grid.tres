@@ -1,10 +1,10 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dc6dnldaumnb2"]
 
-[ext_resource type="Shader" uid="uid://bkncsvascm04i" path="res://world/map/grid.gdshader" id="1_y3p5l"]
+[ext_resource type="Shader" uid="uid://bkncsvascm04i" path="res://world/map/grid.gdshader" id="1_uv104"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_y3p5l")
+shader = ExtResource("1_uv104")
 shader_parameter/grid_colour = Color(0, 0, 0, 1)
 shader_parameter/cell_size = 0.05
 shader_parameter/line_thickness = 0.01
