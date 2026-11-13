@@ -19,11 +19,19 @@ License:
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-vec3 hash(vec3 p)
+vec3 hash_3D(vec3 p)
 {
 	p = vec3(dot(p,vec3(127.1,311.7, 74.7)),
 			 dot(p,vec3(269.5,183.3,246.1)),
 			 dot(p,vec3(113.5,271.9,124.6)));
 
 	return fract((p.xxy + p.yxx) * p.zyx);
+}
+
+vec2 hash_2D(vec2 p)
+{
+	p = vec2(dot(p,vec2(127.1,311.7)),
+			 dot(p,vec2(269.5,183.3)));
+
+	return fract((p.xx + p.yx) * p.yy);
 }
