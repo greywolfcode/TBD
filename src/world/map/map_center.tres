@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ba2og35c3pt2b"]
+
+[ext_resource type="Material" uid="uid://dc6dnldaumnb2" path="res://world/map/grid.tres" id="1_t4llu"]
+[ext_resource type="Shader" uid="uid://ch045n6uruc0t" path="res://world/map/paper.gdshader" id="2_8lfvn"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_t4llu")
+shader = ExtResource("2_8lfvn")
