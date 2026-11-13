@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dnj6034oivbs8" path="res://world/table/table.gd" id="4_3psbg"]
 [ext_resource type="PackedScene" uid="uid://dur34mf6no77" path="res://tiles/preview/tile_preview.tscn" id="5_o4u2g"]
 [ext_resource type="PackedScene" uid="uid://bl3qvbna6i1px" path="res://tiles/meadow/meadow.tscn" id="6_cfpgt"]
+[ext_resource type="PackedScene" uid="uid://brsc5sy4sbt0a" path="res://ui/hand.tscn" id="7_sjjqm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7u66"]
 margin = 0.1
@@ -34,3 +35,5 @@ script = ExtResource("4_3psbg")
 
 [node name="meadow" parent="tiles" unique_id=1172833996 instance=ExtResource("6_cfpgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+
+[node name="hand" parent="." unique_id=1269245742 instance=ExtResource("7_sjjqm")]
