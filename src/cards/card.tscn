@@ -2,6 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bnm5h0xjbbuyw" path="res://cards/card_texture.webp" id="1_ivai2"]
 [ext_resource type="Script" uid="uid://chwdymoqggiut" path="res://cards/card.gd" id="1_nwofj"]
+[ext_resource type="Shader" uid="uid://d2okjrmmbcew8" path="res://cards/card_outline.gdshader" id="2_4k7q8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_st312"]
+shader = ExtResource("2_4k7q8")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 3.0000001425
+shader_parameter/pattern = 0
+shader_parameter/inside = true
+shader_parameter/add_margins = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_j8jgc"]
 font_size = 30
@@ -18,6 +27,7 @@ grow_vertical = 2
 script = ExtResource("1_nwofj")
 
 [node name="card_button" type="TextureButton" parent="." unique_id=808571796]
+material = SubResource("ShaderMaterial_st312")
 layout_mode = 0
 offset_right = 81.0
 offset_bottom = 108.0
@@ -27,7 +37,8 @@ texture_normal = ExtResource("1_ivai2")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 17.0
+offset_top = 3.0
+offset_bottom = 34.0
 grow_horizontal = 2
 text = "Card Name"
 label_settings = SubResource("LabelSettings_j8jgc")
