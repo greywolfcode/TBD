@@ -4,7 +4,7 @@ const center: Vector3 = Vector3.ZERO
 var rotation_speed: float = 2.0 
 var tilt_speed = deg_to_rad(1.0)
 var zoom_speed: float = 10.0
-var zoom_length: float = 1.0
+var zoom_length: float = 0.2
 var zoom_target: float = 1.0
 var angle: float = 0.0
 var offset: Vector3
