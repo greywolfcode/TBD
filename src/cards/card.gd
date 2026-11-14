@@ -12,7 +12,7 @@ func _on_card_button_mouse_exited() -> void:
 	tween.tween_property(self, "position", Vector2(default_x, default_y), 0.5)
 
 func _on_card_button_button_down() -> void:
-	pass # Replace with function body.
+	Globals.game_state = Globals.GameState.PLACING_TILE
 
 func set_card_name(name: String) -> void:
 	$card_button/name.text = name
