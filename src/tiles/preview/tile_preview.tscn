@@ -1,12 +1,6 @@
 [gd_scene format=3 uid="uid://dur34mf6no77"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_gmcdo"]
-size = Vector3(0.05, 0.01, 0.05)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0wkd"]
+[ext_resource type="Script" uid="uid://deyequpc570tq" path="res://tiles/preview/tile_preview.gd" id="1_n0wkd"]
 
 [node name="tile_preview" type="Node3D" unique_id=1668961949]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1178292044]
-mesh = SubResource("BoxMesh_gmcdo")
-surface_material_override/0 = SubResource("StandardMaterial3D_n0wkd")
+script = ExtResource("1_n0wkd")

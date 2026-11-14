@@ -4,12 +4,12 @@ const CARD: PackedScene = preload("res://cards/card.tscn")
 var num_cards: int = 0
 
 func _ready() -> void:
-	add_card("meadow")
-	add_card("forest")
-	add_card("moutain")
-	add_card("water")
+	add_card("meadow", Globals.TileType.MEADOW)
+	add_card("forest", Globals.TileType.FOREST)
+	add_card("moutain", Globals.TileType.MOUNTAIN)
+	add_card("water", Globals.TileType.WATER)
 
-func add_card(card_name: String) -> void:
+func add_card(card_name: String, type: Globals.TileType) -> void:
 	var card: Node = CARD.instantiate()
 	
 	var card_x: int = num_cards * 120 #card is 240 pixels wide, this adds overlap
@@ -17,6 +17,8 @@ func add_card(card_name: String) -> void:
 	card.set_card_default_pos(card_x, card_y)
 	
 	card.set_card_name(card_name)
+	
+	card.tiles[Vector2(0, 0)] = type
 	
 	self.add_child(card)
 	num_cards += 1

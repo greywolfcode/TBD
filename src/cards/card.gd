@@ -2,6 +2,13 @@ extends Control
 
 var default_x: int = 0
 var default_y: int = 0
+var tiles: Dictionary[Vector2, Globals.TileType] = {}
+
+const FOREST: PackedScene = preload("res://tiles/forest/forest.tscn")
+const MEADOW: PackedScene = preload("res://tiles/meadow/meadow.tscn")
+const MOUTAIN: PackedScene = preload("res://tiles/mountain/mountain.tscn")
+const WATER: PackedScene = preload("res://tiles/water/water.tscn")
+
 
 func _on_card_button_mouse_entered() -> void:
 	var tween: Tween = create_tween()
@@ -13,6 +20,20 @@ func _on_card_button_mouse_exited() -> void:
 
 func _on_card_button_button_down() -> void:
 	Globals.game_state = Globals.GameState.PLACING_TILE
+	var preview: Node = get_node("/root/game/table/tile_preview")
+	match tiles[Vector2(0, 0)]:
+		Globals.TileType.FOREST:
+			preview.add_child(FOREST.instantiate())
+			preview.type = Globals.TileType.FOREST
+		Globals.TileType.MEADOW:
+			preview.add_child(MEADOW.instantiate())
+			preview.type = Globals.TileType.MEADOW
+		Globals.TileType.MOUNTAIN:
+			preview.add_child(MOUTAIN.instantiate())
+			preview.type = Globals.TileType.MOUNTAIN
+		Globals.TileType.WATER:
+			preview.add_child(WATER.instantiate())
+			preview.type = Globals.TileType.WATER
 
 func set_card_name(name: String) -> void:
 	$card_button/name.text = name

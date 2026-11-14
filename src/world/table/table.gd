@@ -6,7 +6,10 @@ const RAY_LENGTH: int = 50
 
 var was_unpressed = false #tracks if mouse has been unclicked
 
+const FOREST_TILE: PackedScene = preload("res://tiles/forest/forest.tscn")
 const MEADOW_TILE: PackedScene = preload("res://tiles/meadow/meadow.tscn")
+const MOUTAIN_TILE: PackedScene = preload("res://tiles/mountain/mountain.tscn")
+const WATER_TILE: PackedScene = preload("res://tiles/water/water.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -50,7 +53,17 @@ func _process(delta: float) -> void:
 			if was_unpressed:
 				Globals.tiles[Vector2(preview.position.x, preview.position.y)] = Globals.TileType.MEADOW
 				
-				var new_tile = MEADOW_TILE.instantiate()
+				var new_tile: Node
+				match preview.type:
+					Globals.TileType.FOREST:
+						new_tile = FOREST_TILE.instantiate()
+					Globals.TileType.MEADOW:
+						new_tile = MEADOW_TILE.instantiate()
+					Globals.TileType.MOUNTAIN:
+						new_tile = MOUTAIN_TILE.instantiate()
+					Globals.TileType.WATER:
+						new_tile = WATER_TILE.instantiate()
+				
 				new_tile.position.x = preview.position.x
 				new_tile.position.y = 0.015
 				new_tile.position.z = preview.position.z
