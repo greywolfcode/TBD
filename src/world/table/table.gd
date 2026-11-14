@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 			
 			preview.position.x = grid_x
 			preview.position.z = grid_z
+			preview.position.y = 0.015
 			
 			preview.show()
 		else:
@@ -71,3 +72,8 @@ func _process(delta: float) -> void:
 				Globals.game_state = Globals.GameState.SELECTING_CARD
 				
 				was_unpressed = false
+				preview.hide()
+				
+				#delete children so multiple tiels don't get rendered
+				for child in preview.get_children():
+					child.queue_free()
