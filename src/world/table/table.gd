@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			
 			preview.position.x = grid_x
 			preview.position.z = grid_z
-			preview.position.y = 0.015
+			preview.position.y = 0.0
 			
 			preview.show()
 		else:
@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 						new_tile = WATER_TILE.instantiate()
 				
 				new_tile.position.x = preview.position.x
-				new_tile.position.y = 0.015
+				new_tile.position.y = 0.0
 				new_tile.position.z = preview.position.z
 				tile_storage.add_child(new_tile)
 				Globals.game_state = Globals.GameState.SELECTING_CARD

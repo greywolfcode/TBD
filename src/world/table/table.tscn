@@ -1,40 +1,19 @@
 [gd_scene format=3 uid="uid://clarjomh430v6"]
 
-[ext_resource type="PackedScene" uid="uid://hrehaq6qjap5" path="res://world/table/Table.gltf" id="1_k7u66"]
-[ext_resource type="PackedScene" uid="uid://c2iky006p65tf" path="res://world/map/Map-Center.gltf" id="2_3qiti"]
-[ext_resource type="PackedScene" uid="uid://bq6sxuig85rnw" path="res://world/map/Map-Edge.gltf" id="3_3g2qo"]
+[ext_resource type="Material" uid="uid://ba2og35c3pt2b" path="res://world/map/map_center.tres" id="1_k7u66"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2w44o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvwby"]
-size = Vector3(1.1, 0, 1.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3qiti"]
-size = Vector3(2.3, 1, 2.1)
+size = Vector3(2, 0, 2)
 
 [node name="table" type="Node3D" unique_id=983783951]
 
-[node name="structure" type="Node3D" parent="." unique_id=347108261]
-
-[node name="Table" parent="structure" unique_id=989569162 instance=ExtResource("1_k7u66")]
-
-[node name="Map" type="Node3D" parent="structure" unique_id=2047883649]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-
-[node name="Map-Center" parent="structure/Map" unique_id=1891310043 instance=ExtResource("2_3qiti")]
-
-[node name="Map-Edge1" parent="structure/Map" unique_id=1333821725 instance=ExtResource("3_3g2qo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6096, 0, 0)
-
-[node name="Map-Edge2" parent="structure/Map" unique_id=1614550326 instance=ExtResource("3_3g2qo")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.60960007, 0, 0)
+[node name="table" type="MeshInstance3D" parent="." unique_id=121878502]
+mesh = SubResource("PlaneMesh_2w44o")
+surface_material_override/0 = ExtResource("1_k7u66")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=768709628]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1843869291]
 shape = SubResource("BoxShape3D_cvwby")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=80603684]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=612338212]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_3qiti")
