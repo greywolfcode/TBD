@@ -1,8 +1,7 @@
 extends Node3D
 
 const center: Vector3 = Vector3.ZERO
-var rotation_speed: float = 2.0 
-var tilt_speed = deg_to_rad(1.0)
+var pan_speed: float = 2.0 
 var zoom_speed: float = 10.0
 var zoom_length: float = 0.2
 var zoom_target: float = 1.0
@@ -11,6 +10,7 @@ var offset: Vector3
 
 @onready var camera: Camera3D = $zoom/Camera3D
 @onready var zoom_arm: SpringArm3D = $zoom
+@onready var tiles: Node3D = $"../tiles"
 
 @export var max_rotation: float = 0.0
 @export var min_rotation: float = -60.0
@@ -24,17 +24,15 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("rotate_left"):
-		rotate_y(rotation_speed * delta)
-	elif Input.is_action_pressed("rotate_right"):
-		rotate_y(-1 * rotation_speed * delta)
+	if Input.is_action_pressed("pan_forwards"):
+		tiles.position.z -= pan_speed * delta
+	elif Input.is_action_pressed("pan_backwards"):
+		tiles.position.z += pan_speed * delta
 	
-	if Input.is_action_pressed("tilt_up"):
-		if zoom_arm.rotation_degrees.x < max_rotation:
-			zoom_arm.rotate_x(tilt_speed)
-	elif Input.is_action_pressed("tilt_down"):
-		if zoom_arm.rotation_degrees.x > min_rotation:
-			zoom_arm.rotate_x(-1 * tilt_speed)
+	if Input.is_action_pressed("pan_left"):
+		tiles.position.x -= pan_speed * delta
+	elif Input.is_action_pressed("pan_right"):
+		tiles.position.x += pan_speed * delta
 	
 	if Input.is_action_just_pressed("zoom_out"):
 		if zoom_target < max_zoom:
