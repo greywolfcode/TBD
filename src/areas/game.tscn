@@ -10,10 +10,6 @@
 [sub_resource type="Environment" id="Environment_j8jgc"]
 ambient_light_color = Color(1, 1, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k7u66"]
-margin = 0.5
-size = Vector3(0.1, 0.1, 0.1)
-
 [node name="game" type="Node3D" unique_id=988747938]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=908655829]
@@ -22,12 +18,11 @@ environment = SubResource("Environment_j8jgc")
 [node name="camara" type="Node3D" parent="." unique_id=1887004443]
 script = ExtResource("1_yhr22")
 
-[node name="zoom" type="SpringArm3D" parent="camara" unique_id=72786353]
-transform = Transform3D(1, 0, 0, 0, 0.93969256, 0.3420201, 0, -0.3420201, 0.93969256, 0, 0.459, 1)
-shape = SubResource("BoxShape3D_k7u66")
-margin = 0.5
+[node name="zoom" type="SpringArm3D" parent="camara" unique_id=600327404]
+transform = Transform3D(1, 0, 0, 0, 0.8161376, 0.5778576, 0, -0.5778576, 0.8161376, 0, 0.1, 0.3)
 
 [node name="Camera3D" type="Camera3D" parent="camara/zoom" unique_id=703318921]
+keep_aspect = 0
 
 [node name="table" parent="." unique_id=983783951 instance=ExtResource("3_bllmp")]
 script = ExtResource("4_3psbg")

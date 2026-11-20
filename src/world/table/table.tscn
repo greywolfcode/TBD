@@ -3,9 +3,10 @@
 [ext_resource type="Material" uid="uid://ba2og35c3pt2b" path="res://world/map/map_center.tres" id="1_k7u66"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2w44o"]
+size = Vector2(4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvwby"]
-size = Vector3(2, 0, 2)
+size = Vector3(4, 0, 4)
 
 [node name="table" type="Node3D" unique_id=983783951]
 
