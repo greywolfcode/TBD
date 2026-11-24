@@ -3,6 +3,7 @@ extends Node3D
 const RAY_LENGTH: int = 50
 @onready var preview: Node3D = $tile_preview
 @onready var tile_storage: Node = $"../tiles"
+@onready var grid_shader: ShaderMaterial = $table.get_active_material(0).next_pass
 
 var was_unpressed = false #tracks if mouse has been unclicked
 
@@ -15,7 +16,6 @@ const WATER_TILE: PackedScene = preload("res://tiles/water/water.tscn")
 func _ready() -> void:
 	preview.hide()
 	preview.position.y = 0
-
 func _physics_process(delta: float) -> void:
 	if Globals.game_state == Globals.GameState.PLACING_TILE:
 		var space_state = get_world_3d().direct_space_state
@@ -33,8 +33,8 @@ func _physics_process(delta: float) -> void:
 			var grid_x = floor(result.position.x / 0.05) * 0.05
 			var grid_z = floor(result.position.z / 0.05) * 0.05
 			
-			preview.position.x = grid_x
-			preview.position.z = grid_z
+			preview.position.x = grid_x + Globals.grid_offset.x
+			preview.position.z = grid_z + Globals.grid_offset.z
 			preview.position.y = 0.0
 			
 			preview.show()
@@ -48,6 +48,8 @@ func _input(event: InputEvent) -> void:
 				was_unpressed = true
 
 func _process(delta: float) -> void:
+	grid_shader.set_shader_parameter("offset", Globals.grid_offset)
+	
 	if Globals.game_state == Globals.GameState.PLACING_TILE:
 		if Input.is_action_pressed("left_click"):
 			#make sure player doesn't instantly place tile if mouse is held down
@@ -65,9 +67,10 @@ func _process(delta: float) -> void:
 					Globals.TileType.WATER:
 						new_tile = WATER_TILE.instantiate()
 				
-				new_tile.position.x = preview.position.x
+				#the offset is applie to the preview coords and the tile grid, so remove one stack of it
+				new_tile.position.x = preview.position.x - Globals.grid_offset.x
 				new_tile.position.y = 0.0
-				new_tile.position.z = preview.position.z
+				new_tile.position.z = preview.position.z - Globals.grid_offset.z
 				tile_storage.add_child(new_tile)
 				Globals.game_state = Globals.GameState.SELECTING_CARD
 				

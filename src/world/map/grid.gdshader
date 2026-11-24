@@ -1,12 +1,13 @@
 shader_type spatial;
 
+uniform vec3 offset = vec3(0.0, 0.0, 0.0);
 uniform vec3 grid_colour : source_color = vec3(0.0);
 uniform float cell_size = 0.05;
 uniform float line_thickness : hint_range(0.0, 1.0) = 0.01;
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 
 void fragment() {	
-	vec3 world_pos = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	vec3 world_pos = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz + offset;
 	
 	//shift grid to be centred at (0,0)
 	vec2 grid_pos = mod(world_pos.xz + cell_size, cell_size) / cell_size - 0.5;

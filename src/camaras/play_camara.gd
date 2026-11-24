@@ -41,6 +41,9 @@ func _process(delta: float) -> void:
 		if zoom_target > min_zoom:
 			zoom_target -= zoom_length
 	
+	Globals.grid_offset.x = tiles.position.x
+	Globals.grid_offset.z = tiles.position.z
+	
 	#actually change zoom
 	if zoom_target != zoom_arm.spring_length:
 		zoom_arm.spring_length = lerp(zoom_arm.spring_length, zoom_target, zoom_speed * delta)

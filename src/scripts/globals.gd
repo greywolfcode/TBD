@@ -14,6 +14,8 @@ enum GameState {
 
 @export var game_state: GameState = GameState.SELECTING_CARD
 
+@export var grid_offset: Vector3 = Vector3(0, 0, 0)
+
 @export var tiles: Dictionary[Vector2, TileType] = {
 	Vector2(0, 0): TileType.MEADOW
 }
